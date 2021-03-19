@@ -1,0 +1,136 @@
+{% extends 'poly_base.html' %}
+
+{%block page_name%}
+Add dataset
+{%endblock%}
+
+{% block nav %}
+<ul class="nav">
+  <li class="nav-item  ">
+    <a class="nav-link" href="/polyp/dashboard/">
+      <i class="material-icons">dashboard</i>
+      <p>Dashboard</p>
+    </a>
+  </li>
+  <li class="nav-item active ">
+    <a class="nav-link" href="/polyp/add_dataset/">
+      <i class="material-icons">bubble_chart</i>
+      <p>Add dataset</p>
+    </a>
+  </li>
+  <li class="nav-item  ">
+    <a class="nav-link" href="/polyp/view_all_image/">
+      <i class="material-icons">content_paste</i>
+      <p>View all image</p>
+    </a>
+  </li>
+  <li class="nav-item ">
+    <a class="nav-link" href="./typography.html">
+      <i class="material-icons">library_books</i>
+      <p>Typography</p>
+    </a>
+  </li>
+  <li class="nav-item ">
+    <a class="nav-link" href="./icons.html">
+      <i class="material-icons">bubble_chart</i>
+      <p>Icons</p>
+    </a>
+  </li>
+  <li class="nav-item ">
+    <a class="nav-link" href="./map.html">
+      <i class="material-icons">location_ons</i>
+      <p>Maps</p>
+    </a>
+  </li>
+  <li class="nav-item ">
+    <a class="nav-link" href="./notifications.html">
+      <i class="material-icons">notifications</i>
+      <p>Notifications</p>
+    </a>
+  </li>
+  <li class="nav-item ">
+    <a class="nav-link" href="./rtl.html">
+      <i class="material-icons">language</i>
+      <p>RTL Support</p>
+    </a>
+  </li>
+  <li class="nav-item active-pro ">
+    <a class="nav-link" href="./upgrade.html">
+      <i class="material-icons">unarchive</i>
+      <p>Upgrade to PRO</p>
+    </a>
+  </li>
+</ul>
+{% endblock %}
+{% block content %}
+<div class="content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-5">
+        <div class="card">
+          <div class="card-header card-header-primary">
+            <h4 class="card-title">Add image</h4>
+            <p class="card-category">Add training and validation dataset</p>
+          </div>
+          <div class="card-body">
+            <form action="/polyp/add_dataset/" method="POST"> 
+              {% csrf_token %}
+              <div class="row">
+                <div class="col-md-5">
+                  <div class="form-group">
+                    <label class="bmd-label-floating">choose class</label>                    
+                    <select name="class_name" class="form-control">
+                      {% for cls in classes %}
+                      <option value="{{cls}}">{{cls}}</option>
+                      {%endfor%}
+                     
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="form-group">
+                    
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                   
+                  </div>
+                </div>
+              </div>
+              
+              <button type="submit" class="btn btn-primary pull-right">add image</button>
+              <div class="clearfix"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-7">
+        <div class="card card-profile">
+          <div class="card-avatar">
+            <a href="javascript:;">
+              <img class="img" src="/static/images/segmentation1.png" />
+            </a>
+          </div>
+          <div class="card-body">
+            <h6 class="card-category text-gray">Instance segmentation of colon polyp</h6>
+            <h4 class="card-title">Trained on Mask-RCNN</h4>
+            <p class="card-description" style="text-align: justify;">
+               Colonoscopy has been widely applied
+as a common practice to detect polyps and to detect changes or abnormalities in the large
+colon. However missing polyps in such procedure could happen and thus preventing early
+disease detection and treatment. Traditional manual screening is time consuming, operator
+dependent and error prone. Hence automated detection approach is highly demanded in
+clinical practice. The proposed method apply a powerful object detection neural network
+'Mask R-CNN' to detect and gives instance segmentation of polyps in colonoscopy images.
+            </p>
+
+            <a href="/polyp/view_all_image/" class="btn btn-primary btn-round">view all images</a>
+           
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
