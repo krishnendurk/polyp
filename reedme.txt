@@ -1,0 +1,3 @@
+project loc: /home/zeroneadmin/AI/Mask_polyp/models/research/object_detection
+env: /home/zeroneadmin/env/polyp_1/
+run - sudo python3

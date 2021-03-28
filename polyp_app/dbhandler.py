@@ -13,6 +13,19 @@ class Insert:
             print(form.errors)
 
         return res, error
+    def detection(self,data,files):
+        res = {}
+        error = None
+        form=DetectionTableForm(data,files)
+        if form.is_valid():
+            res["result"] = True
+            m_detection = form.save()
+            res["image_url"] = m_detection.image.url
+        if form.errors:
+            error = form.errors
+            print(form.errors)
+
+        return res, error
 
 class Get:
     def dataset(self):

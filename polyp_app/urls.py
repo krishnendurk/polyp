@@ -24,6 +24,7 @@ urlpatterns = [
     path('add_dataset/', views.AddDatasetView.as_view()),
     path('upload_image/', views.UploadDatasetView.as_view()),
     path('view_all_image/', views.ViewAllImage.as_view()),
+    path('detection/', views.DetectionView.as_view()),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root = settings.STATIC_ROOT)

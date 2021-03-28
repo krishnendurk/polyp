@@ -2,3 +2,5 @@
 /authentication_app/migrations/__pycache__
 /polyp_app/migrations/__pycache__
 /polyp_app/__pycache__
+/models
+/polyp/__pycache__

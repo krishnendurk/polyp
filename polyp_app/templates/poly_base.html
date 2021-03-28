@@ -28,6 +28,7 @@ The above copyright notice and this permission notice shall be included in all c
   <link href="/static/assets/css/material-dashboard.css?v=2.1.2" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="/static/assets/demo/demo.css" rel="stylesheet" />
+  {% block page_meta %}{% endblock %}
 </head>
 
 <body class="">
@@ -38,8 +39,8 @@ The above copyright notice and this permission notice shall be included in all c
 
         Tip 2: you can also add an image using data-image tag
     -->
-      <div class="logo"><a href="http://www.creative-tim.com" class="simple-text logo-normal">
-          Creative Tim
+      <div class="logo"><a href="/" class="simple-text logo-normal">
+        Polyps detection
         </a></div>
       <div class="sidebar-wrapper">
         {% block nav %} {% endblock %}
@@ -113,7 +114,7 @@ The above copyright notice and this permission notice shall be included in all c
       </nav>
       <!-- End Navbar -->
       {% block content %} {% endblock %}
-      <footer class="footer">
+      <!-- <footer class="footer">
         <div class="container-fluid">
           <nav class="float-left">
             <ul>
@@ -147,7 +148,7 @@ The above copyright notice and this permission notice shall be included in all c
             <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a> for a better web.
           </div>
         </div>
-      </footer>
+      </footer> -->
     </div>
   </div>
   <div class="fixed-plugin">
